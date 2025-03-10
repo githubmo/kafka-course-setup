@@ -18,7 +18,7 @@ The following are mandatory requirements:
 
 - JDK 17 or 21 installed
 - Maven 3.9.0 or newer
-- Docker desktop or opensource equivalent such as Portainer
+- Docker desktop or FOSS equivalent such as Portainer
     - Must be able to run `docker compose` commands
 - IntelliJ or any IDE/text-editor that can import a maven project
 - Ports 9092, 9091 and 8081 available
