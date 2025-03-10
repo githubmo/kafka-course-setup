@@ -1,0 +1,478 @@
+[2025-03-10 11:06:30,511] [34m[INFO][0;39m [o.s.t.c.s.AnnotationConfigContextLoaderUtils] Could not detect default configuration classes for test class [io.example.KafkaSpringBootDemoApplicationTests]: KafkaSpringBootDemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[2025-03-10 11:06:30,567] [34m[INFO][0;39m [o.s.b.t.c.SpringBootTestContextBootstrapper] Found @SpringBootConfiguration io.example.KafkaSpringBootDemoApplication for test class io.example.KafkaSpringBootDemoApplicationTests
+[2025-03-10 11:06:30,704] [34m[INFO][0;39m [i.e.KafkaSpringBootDemoApplicationTests] Starting KafkaSpringBootDemoApplicationTests using Java 21.0.6 with PID 19067 (started by mo in /Users/mo/training/kafka-spring-boot-demo/spring-boot-example)
+[2025-03-10 11:06:30,704] [34m[INFO][0;39m [i.e.KafkaSpringBootDemoApplicationTests] No active profile set, falling back to 1 default profile: "default"
+[2025-03-10 11:06:30,803] [31m[WARN][0;39m [o.s.c.a.AnnotationConfigApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.autoconfigure.service.connection.ConnectionDetailsNotFoundException: No ConnectionDetails found for source '@ServiceConnection source for Bean 'kafkaContainer' defined in class path resource [io/example/TestcontainersConfiguration.class]'. You may need to add a 'name' to your @ServiceConnection annotation
+[2025-03-10 11:06:30,810] [34m[INFO][0;39m [o.s.b.a.l.ConditionEvaluationReportLogger] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[2025-03-10 11:06:30,818] [1;31m[ERROR][0;39m [o.s.b.SpringApplication] Application run failed
+org.springframework.boot.autoconfigure.service.connection.ConnectionDetailsNotFoundException: No ConnectionDetails found for source '@ServiceConnection source for Bean 'kafkaContainer' defined in class path resource [io/example/TestcontainersConfiguration.class]'. You may need to add a 'name' to your @ServiceConnection annotation
+	at org.springframework.boot.testcontainers.service.connection.ConnectionDetailsRegistrar.rethrowConnectionDetails(ConnectionDetailsRegistrar.java:89)
+	at org.springframework.boot.testcontainers.service.connection.ConnectionDetailsRegistrar.registerBeanDefinitions(ConnectionDetailsRegistrar.java:79)
+	at org.springframework.boot.testcontainers.service.connection.ServiceConnectionAutoConfigurationRegistrar.registerBeanDefinitions(ServiceConnectionAutoConfigurationRegistrar.java:64)
+	at org.springframework.boot.testcontainers.service.connection.ServiceConnectionAutoConfigurationRegistrar.registerBeanDefinitions(ServiceConnectionAutoConfigurationRegistrar.java:53)
+	at org.springframework.context.annotation.ImportBeanDefinitionRegistrar.registerBeanDefinitions(ImportBeanDefinitionRegistrar.java:86)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:376)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:375)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:148)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:429)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:142)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:98)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+[2025-03-10 11:06:30,821] [31m[WARN][0;39m [o.s.t.c.TestContextManager] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener] to prepare test instance [io.example.KafkaSpringBootDemoApplicationTests@3abfe845]
+java.lang.IllegalStateException: Failed to load ApplicationContext for [MergedContextConfiguration@129bd55d testClass = io.example.KafkaSpringBootDemoApplicationTests, locations = [], classes = [io.example.KafkaSpringBootDemoApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [[ImportsContextCustomizer@7be7e15 key = [io.example.TestcontainersConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@ebaa6cb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@604c5de8, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6ad59d92, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@189aa67a, org.springframework.boot.testcontainers.service.connection.ServiceConnectionContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@89be0781], contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:142)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:98)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: org.springframework.boot.autoconfigure.service.connection.ConnectionDetailsNotFoundException: No ConnectionDetails found for source '@ServiceConnection source for Bean 'kafkaContainer' defined in class path resource [io/example/TestcontainersConfiguration.class]'. You may need to add a 'name' to your @ServiceConnection annotation
+	at org.springframework.boot.testcontainers.service.connection.ConnectionDetailsRegistrar.rethrowConnectionDetails(ConnectionDetailsRegistrar.java:89)
+	at org.springframework.boot.testcontainers.service.connection.ConnectionDetailsRegistrar.registerBeanDefinitions(ConnectionDetailsRegistrar.java:79)
+	at org.springframework.boot.testcontainers.service.connection.ServiceConnectionAutoConfigurationRegistrar.registerBeanDefinitions(ServiceConnectionAutoConfigurationRegistrar.java:64)
+	at org.springframework.boot.testcontainers.service.connection.ServiceConnectionAutoConfigurationRegistrar.registerBeanDefinitions(ServiceConnectionAutoConfigurationRegistrar.java:53)
+	at org.springframework.context.annotation.ImportBeanDefinitionRegistrar.registerBeanDefinitions(ImportBeanDefinitionRegistrar.java:86)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:376)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:375)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:148)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:429)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
+	... 73 common frames omitted
+[2025-03-10 11:13:23,539] [34m[INFO][0;39m [i.e.KafkaSpringBootDemoApplication] Starting KafkaSpringBootDemoApplication using Java 21.0.6 with PID 19544 (/Users/mo/training/kafka-spring-boot-demo/spring-boot-example/target/classes started by mo in /Users/mo/training/kafka-spring-boot-demo/spring-boot-example)
+[2025-03-10 11:13:23,539] [34m[INFO][0;39m [i.e.KafkaSpringBootDemoApplication] No active profile set, falling back to 1 default profile: "default"
+[2025-03-10 11:13:23,883] [34m[INFO][0;39m [o.a.k.c.c.ConsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-myGroup-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = myGroup
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_committed
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+[2025-03-10 11:13:23,904] [34m[INFO][0;39m [o.a.k.c.t.i.KafkaMetricsCollector] initializing Kafka metrics collector
+[2025-03-10 11:13:23,965] [34m[INFO][0;39m [o.a.k.c.u.AppInfoParser] Kafka version: 3.7.0
+[2025-03-10 11:13:23,965] [34m[INFO][0;39m [o.a.k.c.u.AppInfoParser] Kafka commitId: 2ae524ed625438c5
+[2025-03-10 11:13:23,965] [34m[INFO][0;39m [o.a.k.c.u.AppInfoParser] Kafka startTimeMs: 1741605203965
+[2025-03-10 11:13:23,967] [34m[INFO][0;39m [o.a.k.c.c.i.LegacyKafkaConsumer] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Subscribed to topic(s): spring-boot-example
+[2025-03-10 11:13:23,973] [34m[INFO][0;39m [i.e.KafkaSpringBootDemoApplication] Started KafkaSpringBootDemoApplication in 0.53 seconds (process running for 0.685)
+[2025-03-10 11:13:23,974] [34m[INFO][0;39m [i.e.AppRunner] Sending messages..
+[2025-03-10 11:13:23,982] [34m[INFO][0;39m [o.a.k.c.p.ProducerConfig] ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = kafka-spring-boot-demo-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 3
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+[2025-03-10 11:13:23,987] [34m[INFO][0;39m [o.a.k.c.t.i.KafkaMetricsCollector] initializing Kafka metrics collector
+[2025-03-10 11:13:23,990] [34m[INFO][0;39m [o.a.k.c.p.KafkaProducer] [Producer clientId=kafka-spring-boot-demo-producer-1] Instantiated an idempotent producer.
+[2025-03-10 11:13:23,996] [34m[INFO][0;39m [o.a.k.c.u.AppInfoParser] Kafka version: 3.7.0
+[2025-03-10 11:13:23,996] [34m[INFO][0;39m [o.a.k.c.u.AppInfoParser] Kafka commitId: 2ae524ed625438c5
+[2025-03-10 11:13:23,996] [34m[INFO][0;39m [o.a.k.c.u.AppInfoParser] Kafka startTimeMs: 1741605203996
+[2025-03-10 11:13:24,093] [34m[INFO][0;39m [o.a.k.c.Metadata] [Producer clientId=kafka-spring-boot-demo-producer-1] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+[2025-03-10 11:13:24,093] [34m[INFO][0;39m [o.a.k.c.Metadata] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+[2025-03-10 11:13:24,094] [34m[INFO][0;39m [o.a.k.c.p.i.TransactionManager] [Producer clientId=kafka-spring-boot-demo-producer-1] ProducerId set to 19 with epoch 0
+[2025-03-10 11:13:24,094] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+[2025-03-10 11:13:24,094] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] (Re-)joining group
+[2025-03-10 11:13:24,100] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Request joining group due to: need to re-join with the given member-id: consumer-myGroup-1-da61d1c2-b3f1-441b-b5d0-88bd3deb2eb6
+[2025-03-10 11:13:24,100] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] (Re-)joining group
+[2025-03-10 11:13:24,102] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Successfully joined group with generation Generation{generationId=23, memberId='consumer-myGroup-1-da61d1c2-b3f1-441b-b5d0-88bd3deb2eb6', protocol='range'}
+[2025-03-10 11:13:24,104] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Finished assignment for group at generation 23: {consumer-myGroup-1-da61d1c2-b3f1-441b-b5d0-88bd3deb2eb6=Assignment(partitions=[spring-boot-example-0, spring-boot-example-1, spring-boot-example-2])}
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [i.e.ProducerService] Message sent: Message 0
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [i.e.ProducerService] Message sent: Message 1
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [i.e.ProducerService] Message sent: Message 2
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [i.e.ProducerService] Message sent: Message 3
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [i.e.ProducerService] Message sent: Message 4
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [i.e.ProducerService] Message sent: Message 5
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Successfully synced group in generation Generation{generationId=23, memberId='consumer-myGroup-1-da61d1c2-b3f1-441b-b5d0-88bd3deb2eb6', protocol='range'}
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [i.e.ProducerService] Message sent: Message 6
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [i.e.ProducerService] Message sent: Message 7
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [i.e.ProducerService] Message sent: Message 8
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [i.e.ProducerService] Message sent: Message 9
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Notifying assignor about the new Assignment(partitions=[spring-boot-example-0, spring-boot-example-1, spring-boot-example-2])
+[2025-03-10 11:13:24,107] [34m[INFO][0;39m [i.e.AppRunner] Messages sent
+[2025-03-10 11:13:24,108] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerRebalanceListenerInvoker] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Adding newly assigned partitions: spring-boot-example-0, spring-boot-example-1, spring-boot-example-2
+[2025-03-10 11:13:24,111] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerUtils] Setting offset for partition spring-boot-example-0 to the committed offset FetchPosition{offset=60, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
+[2025-03-10 11:13:24,111] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerUtils] Setting offset for partition spring-boot-example-2 to the committed offset FetchPosition{offset=20, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
+[2025-03-10 11:13:24,111] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerUtils] Setting offset for partition spring-boot-example-1 to the committed offset FetchPosition{offset=20, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
+[2025-03-10 11:13:24,111] [34m[INFO][0;39m [o.s.k.l.KafkaMessageListenerContainer] myGroup: partitions assigned: [spring-boot-example-0, spring-boot-example-1, spring-boot-example-2]
+[2025-03-10 11:13:24,120] [34m[INFO][0;39m [i.e.Consumer] Message received: Message 0
+[2025-03-10 11:13:24,120] [34m[INFO][0;39m [i.e.Consumer] Message received: Message 1
+[2025-03-10 11:13:24,121] [34m[INFO][0;39m [i.e.Consumer] Message received: Message 2
+[2025-03-10 11:13:24,121] [34m[INFO][0;39m [i.e.Consumer] Message received: Message 3
+[2025-03-10 11:13:24,121] [34m[INFO][0;39m [i.e.Consumer] Message received: Message 4
+[2025-03-10 11:13:24,121] [34m[INFO][0;39m [i.e.Consumer] Message received: Message 5
+[2025-03-10 11:13:24,121] [34m[INFO][0;39m [i.e.Consumer] Message received: Message 6
+[2025-03-10 11:13:24,121] [34m[INFO][0;39m [i.e.Consumer] Message received: Message 7
+[2025-03-10 11:13:24,121] [34m[INFO][0;39m [i.e.Consumer] Message received: Message 8
+[2025-03-10 11:13:24,121] [34m[INFO][0;39m [i.e.Consumer] Message received: Message 9
+[2025-03-10 11:13:29,095] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerRebalanceListenerInvoker] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Revoke previously assigned partitions spring-boot-example-0, spring-boot-example-1, spring-boot-example-2
+[2025-03-10 11:13:29,096] [34m[INFO][0;39m [o.s.k.l.KafkaMessageListenerContainer] myGroup: partitions revoked: [spring-boot-example-0, spring-boot-example-1, spring-boot-example-2]
+[2025-03-10 11:13:29,096] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Member consumer-myGroup-1-da61d1c2-b3f1-441b-b5d0-88bd3deb2eb6 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+[2025-03-10 11:13:29,096] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Resetting generation and member id due to: consumer pro-actively leaving the group
+[2025-03-10 11:13:29,096] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Request joining group due to: consumer pro-actively leaving the group
+[2025-03-10 11:13:29,096] [34m[INFO][0;39m [o.a.k.c.c.i.LegacyKafkaConsumer] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Unsubscribed all topics or patterns and assigned partitions
+[2025-03-10 11:13:29,100] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Resetting generation and member id due to: consumer pro-actively leaving the group
+[2025-03-10 11:13:29,101] [34m[INFO][0;39m [o.a.k.c.c.i.ConsumerCoordinator] [Consumer clientId=consumer-myGroup-1, groupId=myGroup] Request joining group due to: consumer pro-actively leaving the group
+[2025-03-10 11:13:29,176] [34m[INFO][0;39m [o.a.k.c.m.Metrics] Metrics scheduler closed
+[2025-03-10 11:13:29,177] [34m[INFO][0;39m [o.a.k.c.m.Metrics] Closing reporter org.apache.kafka.common.metrics.JmxReporter
+[2025-03-10 11:13:29,177] [34m[INFO][0;39m [o.a.k.c.m.Metrics] Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+[2025-03-10 11:13:29,177] [34m[INFO][0;39m [o.a.k.c.m.Metrics] Metrics reporters closed
+[2025-03-10 11:13:29,179] [34m[INFO][0;39m [o.a.k.c.u.AppInfoParser] App info kafka.consumer for consumer-myGroup-1 unregistered
+[2025-03-10 11:13:29,180] [34m[INFO][0;39m [o.s.k.l.KafkaMessageListenerContainer] myGroup: Consumer stopped
+[2025-03-10 11:13:29,180] [34m[INFO][0;39m [o.a.k.c.p.KafkaProducer] [Producer clientId=kafka-spring-boot-demo-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+[2025-03-10 11:13:29,182] [34m[INFO][0;39m [o.a.k.c.m.Metrics] Metrics scheduler closed
+[2025-03-10 11:13:29,182] [34m[INFO][0;39m [o.a.k.c.m.Metrics] Closing reporter org.apache.kafka.common.metrics.JmxReporter
+[2025-03-10 11:13:29,182] [34m[INFO][0;39m [o.a.k.c.m.Metrics] Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+[2025-03-10 11:13:29,182] [34m[INFO][0;39m [o.a.k.c.m.Metrics] Metrics reporters closed
+[2025-03-10 11:13:29,182] [34m[INFO][0;39m [o.a.k.c.u.AppInfoParser] App info kafka.producer for kafka-spring-boot-demo-producer-1 unregistered
