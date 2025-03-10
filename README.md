@@ -46,7 +46,7 @@ below.
 Download the dependencies:
 
 ```shell
-mvn install`
+mvn install
 ```
 
 Run the kafka example project:
