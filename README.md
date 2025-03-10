@@ -28,7 +28,7 @@ The following are mandatory requirements:
 First, we must get Kafka up and running. In a console/terminal, run:
 
 ```shell
-docker compose up -d`
+docker compose up -d
 ```
 
 Edit the root [pom.xml](pom.xml) to make sure the JDK version in the properties
