@@ -6,7 +6,7 @@ for the Kafka course to be delivered in the last week of March.
 Below is a checklist of what we are looking for:
 
 - [ ] Run the Docker Compose to set up Kafka locally with local Docker
-- [ ] Import sample code into IntelliJ or IDE of choice at Companies House
+- [ ] Import sample code into IntelliJ or IDE of choice
 - [ ] Download the necessary maven dependencies
 - [ ] Run the sample Kafka example project with no issues
 - [ ] Run the sample Spring Boot application with no issues
@@ -18,7 +18,7 @@ The following are mandatory requirements:
 
 - JDK 17 or 21 installed
 - Maven 3.9.0 or newer
-- Docker desktop or FOSS equivalent such as Portainer
+- Docker desktop or FOSS equivalent such as Portaine:r
     - Must be able to run `docker compose` commands
 - IntelliJ or any IDE/text-editor that can import a maven project
 - Ports 9092, 9091 and 8081 available
